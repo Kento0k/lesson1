@@ -1,8 +1,15 @@
 package knight;
 
+import implementation.phrases.IAmKnight;
+import interfaces.CatchPhrase;
 import interfaces.Quest;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class Knight {
+
+    @Autowired
+    IAmKnight catchPhrase;
+
     private Quest quest;
 
     public Knight(){}
@@ -19,7 +26,12 @@ public class Knight {
         this.quest = quest;
     }
 
+
     public void embarkOnQuest(){
         System.out.println("I AM READY FOR QUEST");
+    }
+
+    public void sayPhrase(){
+        catchPhrase.sayPhrase();
     }
 }

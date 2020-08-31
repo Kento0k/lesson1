@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <bean id="war" class="implementation.MakeWar"/>
-    <bean id="princess" class="implementation.SavePrincess"/>
-    <bean id="dragon" class="implementation.BeatDragon"/>
-    <bean id="knight" class="knight.Knight">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<context:annotation-config/>
+    <bean id="war" class="implementation.quests.MakeWar"/>
+    <bean id="princess" class="implementation.quests.SavePrincess"/>
+    <bean id="dragon" class="implementation.quests.BeatDragon"/>
+    <bean id="catchPhrase1" class = "implementation.phrases.AllForTheKing"/>
+    <bean id="catchPhrase2" class = "implementation.phrases.IAmKnight"/>
+    <bean id="knight1" class="knight.Knight">
         <constructor-arg ref="dragon"/>
     </bean>
 </beans>

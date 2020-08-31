@@ -1,4 +1,4 @@
-package implementation;
+package implementation.quests;
 
 import interfaces.Quest;
 
